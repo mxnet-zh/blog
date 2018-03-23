@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<article id="post-page">
+	<h2>{%if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %}</h2>
+
+    <span class="by-line">
+	<time datetime="{{ page.date | date_to_xmlschema }}">{{
+	  page.date | date_to_string }} </time>
+    &nbsp; &middot; &nbsp; {{ page.author}}
+    </span>
+
+	<div class="content">
+
+		{{ content }}
+
+	</div>
+</article>

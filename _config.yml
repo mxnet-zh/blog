@@ -1,0 +1,41 @@
+# Site settings
+title: Apache MXNet Blog | 中文
+description: "Apache MXNet 博客，介绍前沿深度学习技术 "
+url: "http://zh.mxnet.io/blog"
+
+author:
+  name: "MXNet 社区"
+  email: "dev@mxnet.io"
+  url: "http://mxnet.io"
+
+
+# Build settings
+baseurl: /blog # Change this to your relative path (ex: /blog/), or leave just a /
+markdown: kramdown
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 8
+paginate_path: /page:num/
+
+# Default values
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+
+# Custom variables
+version: "1.0.0"
+
+# Options
+custom_header: false
+custom_nav_footer: false
+reverse: false
