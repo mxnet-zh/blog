@@ -14,7 +14,8 @@ layout: default
           &nbsp; &middot; &nbsp; {{ post.author}}
         </span>
 
-	  	<p>{{ post.content | truncatewords:50 }}</p>
+	  	<p>{{ post.content | strip_html | truncate:200 }}</p>
+        <p>
 	  </li>
 
     {% endfor %}
