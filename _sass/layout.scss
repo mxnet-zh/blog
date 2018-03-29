@@ -2,7 +2,7 @@
 
 /* Navigation */
 
-#nav, #nav-left { 
+#nav, #nav-left {
   a {
     display: block;
     color: $text-color;
@@ -42,7 +42,7 @@
 #nav-links {
   @media (max-width: 940px) {
     display:none;
-  }   
+  }
   a {
     padding-left: 10px;
     color: $text-color;
@@ -80,7 +80,7 @@
 #menu {
   height: 4px;
   width: 1.5em;
-  background-color: $text-color;
+  background-color: $link-color;
   margin-top: 8px;
   &:after, &:before {
     content: "";
@@ -88,7 +88,7 @@
     position: relative;
     height: 4px;
     width: 1.5em;
-    background-color: $text-color;
+    background-color: $link-color;
     transition: all 0.3s ease-in;
   }
   &:before {
@@ -106,7 +106,7 @@
        -moz-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
-    background-color: $text-color;
+    background-color: $link-color;
   }
   &.btn-close:after {
     top: -4px;
@@ -114,7 +114,7 @@
        -moz-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg);
-    background-color: $text-color;
+    background-color: $link-color;
   }
 }
 
@@ -182,7 +182,7 @@
 .by-line {
   display: block;
   color: lighten($text-color, 25%);
-  line-height: 1.8em; 
+  line-height: 1.8em;
   margin-bottom: 1.5em; /* 24px/16px */
   font-weight: 200;
   @media (min-width: 940px) {
@@ -220,7 +220,7 @@ code {
   line-height: 1.8em;
   padding-left: 1.5em;
   @media (min-width: 940px) {
-    line-height: 1.8em; 
+    line-height: 1.8em;
   }
 }
 

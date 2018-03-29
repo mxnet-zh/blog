@@ -4,11 +4,11 @@
 
 
 #header h1 {
-        color: #2980B9;
+    color: $link-color;
 }
 
 #header h1 span {
-        color: #2980B9;
+    color: $link-color;
 }
 
 h2 {
@@ -18,11 +18,11 @@ h2 {
 
 a {
   font-weight:400;
-  color: #2980B9;
+    color: $link-color;
 }
 
 #nav-links a {
-  color: #2980B9;
+    color: $link-color;
 }
 
 /* github table */
