@@ -8,7 +8,7 @@ author: 李沐 Amazon Principal Scientist
 
 可能大家不是特别知道的是，MXNet 通过 `ndarray` 和 `gluon` 模块提供了非常类似 PyTorch 的编程接口。本文将简单对比如何用这两个框架来实现同样的算法。
 
-![](img/pytorch-to-mxnet.png){:width="600px"}
+![](img/pytorch-to-mxnet.png){:width="500px"}
 
 ## 安装
 
