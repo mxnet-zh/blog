@@ -1,10 +1,8 @@
-—-
-
+---
 title: PyTorch 用户如何 10 分钟入门 MXNet
-
 author: 李沐 Amazon Principal Scientist
 
-—-
+---
 
 [PyTorch](pytorch.org) 是一个纯命令式的深度学习框架。它因为提供简单易懂的编程接口而广受欢迎，而且正在快速的流行开来。例如 Caffe2 最近就并入了 PyTorch。
 
@@ -18,7 +16,7 @@ PyTorch 默认使用 conda 来进行安装，例如
 conda install pytorch-cpu -c pytorch
 ```
 
-而 MXNet 更常用的是使用 pip。我们这里使用了 `—pre` 来安装 nightly 版本
+而 MXNet 更常用的是使用 pip。我们这里使用了 `--pre` 来安装 nightly 版本
 
 ```bash
 pip install --pre mxnet
@@ -63,7 +61,7 @@ pip install --pre mxnet
   ```
 
 
-​      
+
 
 忽略包名的不一样的话，这里主要的区别是 MXNet 的形状传入参数跟 NumPy 一样需要用括号括起来。
 
@@ -97,13 +95,13 @@ pip install --pre mxnet
   train_data = gluon.data.DataLoader(
       datasets.MNIST(train=True).transform_first(transforms.Compose([
           transforms.ToTensor(),
-          transforms.Normalize(0.13, 0.31)])), 
+          transforms.Normalize(0.13, 0.31)])),
   	batch_size=128, shuffle=True, num_workers=4)
   ```
 
 这里的主要区别是 MXNet 使用 `transform_first` 来表明数据变化是作用在读到的批量的第一个元素，既 MNIST 图片，而不是第二个标号元素。
 
-### 定义模型 
+### 定义模型
 
 下面我们定义一个只有一个单隐层的 MLP 。
 
@@ -130,7 +128,7 @@ pip install --pre mxnet
           nn.Dense(256, activation='relu'),
           nn.Dense(10)
       )
-  net.initialize()    
+  net.initialize()
   ```
 
 
@@ -203,7 +201,7 @@ pip install --pre mxnet
       for X, y in train_data:
           with mx.autograd.record():
   	        loss = loss_fn(net(X.flatten()), y)
-          loss.backward()        
+          loss.backward()
           trainer.step(batch_size=128)
           total_loss += loss.mean().asscalar()
       print('epoch %d, avg loss %.4f, time %.2f' % (
@@ -218,7 +216,7 @@ pip install --pre mxnet
   epoch 4, avg loss 0.0674, time 1.75
   ```
 
-  ​
+
 
 MXNet 跟 PyTorch 的不同主要在下面这几点：
 
@@ -227,7 +225,7 @@ MXNet 跟 PyTorch 的不同主要在下面这几点：
 - `step` 的时候 MXNet 需要给定批量大小
 - 需要调用 `asscalar()` 来将多维数组变成标量。
 
-## 下一步 
+## 下一步
 
 - [更详细的 MXNet 的教程](http://zh.gluon.ai/)
 - 欢迎给我们留言哪些 PyTorch 的方便之处你希望 MXNet 应该也可以有
