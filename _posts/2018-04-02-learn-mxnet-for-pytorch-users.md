@@ -228,4 +228,4 @@ MXNet 跟 PyTorch 的不同主要在下面这几点：
 ## 下一步
 
 - [更详细的 MXNet 的教程](http://zh.gluon.ai/)
-- 欢迎给我们留言哪些 PyTorch 的方便之处你希望 MXNet 应该也可以有
+- [欢迎给我们留言哪些 PyTorch 的方便之处你希望 MXNet 应该也可以有](https://discuss.gluon.ai/t/topic/5618)
