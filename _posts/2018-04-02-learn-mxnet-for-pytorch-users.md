@@ -24,7 +24,7 @@ pip install --pre mxnet
 
 ## 多维矩阵
 
-对于多维矩阵，PyTorch 沿用了 Torch 的风格称之为 tensor，MXNet 则追随了 NumPy 的称呼 ndarray。下面我们创建一个两维矩阵，其中每个元素初始化成 1。然后每个元素加 2 后打印。
+对于多维矩阵，PyTorch 沿用了 Torch 的风格称之为 tensor，MXNet 则追随了 NumPy 的称呼 ndarray。下面我们创建一个两维矩阵，其中每个元素初始化成 1。然后每个元素加 1 后打印。
 
 - PyTorch:
 
