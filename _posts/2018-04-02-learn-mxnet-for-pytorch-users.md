@@ -1,5 +1,5 @@
 ---
-title: 十分钟从 PyTorch 到 MXNet
+title: 十分钟从 PyTorch 转 MXNet
 author: 李沐 Amazon Principal Scientist
 
 ---
