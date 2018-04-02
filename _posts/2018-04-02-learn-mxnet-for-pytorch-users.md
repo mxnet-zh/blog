@@ -1,5 +1,5 @@
 ---
-title: PyTorch 用户如何 10 分钟入门 MXNet
+title: 从 PyTorch 10 分钟入门 MXNet
 author: 李沐 Amazon Principal Scientist
 
 ---
