@@ -92,7 +92,7 @@ pip install --pre mxnet
 
   ```python
   from mxnet import gluon
-  from mxnet.gluon.data.vision import datasetes, transforms
+  from mxnet.gluon.data.vision import datasets, transforms
 
   train_data = gluon.data.DataLoader(
       datasets.MNIST(train=True).transform_first(transforms.Compose([
