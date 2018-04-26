@@ -26,7 +26,7 @@ pip install --pre mxnet
 
 ## 多维矩阵
 
-对于多维矩阵，PyTorch 沿用了 Torch 的风格称之为 tensor，MXNet 则追随了 NumPy 的称呼 ndarray。下面我们创建一个两维矩阵，其中每个元素初始化成 1。然后每个元素加 1 后打印。
+对于多维矩阵，PyTorch 沿用了 Torch 的风格称之为 tensor，MXNet 则追随了 NumPy 的称呼 ndarray。下面我们创建一个二维矩阵，其中每个元素初始化成 1。然后每个元素加 1 后打印。
 
 - PyTorch:
 
@@ -101,7 +101,7 @@ pip install --pre mxnet
   	batch_size=128, shuffle=True, num_workers=4)
   ```
 
-这里的主要区别是 MXNet 使用 `transform_first` 来表明数据变化是作用在读到的批量的第一个元素，既 MNIST 图片，而不是第二个标号元素。
+这里的主要区别是 MXNet 使用 `transform_first` 来表明数据变化是作用在读到的批量的第一个元素，即 MNIST 图片，而不是第二个标号元素。
 
 ### 定义模型
 
@@ -140,7 +140,7 @@ pip install --pre mxnet
 - 不需要指定输入大小，这个系统会在后面自动推理得到
 - 全连接和卷积层可以指定激活函数
 - 需要创建一个  `name_scope`  的域来给每一层附上一个独一无二的名字，这个在之后读写模型时需要
-- 我们需要显示调用模型初始化函数。
+- 我们需要显式调用模型初始化函数。
 
 大家知道 `Sequential` 下只能神经网络只能逐一执行每个层。PyTorch可以继承 `nn.Module` 来自定义 `forward` 如何执行。同样，MXNet 可以继承 `nn.Block` 来达到类似的效果。
 
@@ -161,7 +161,7 @@ pip install --pre mxnet
                           'sgd', {'learning_rate': 0.1})
   ```
 
-这里我们使用交叉熵函数和最简单随机梯度下降并使用固定学习率 0.1
+这里我们使用交叉熵函数和最简单的随机梯度下降并使用固定的学习率 0.1
 
 ### 训练
 
