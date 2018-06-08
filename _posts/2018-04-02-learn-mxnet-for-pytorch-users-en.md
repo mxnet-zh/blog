@@ -7,7 +7,7 @@ translator: Hao Jin Amazon Software Development Engineer
 
 [PyTorch](pytorch.org) is a purely imperative deep learning framework. It’s quickly gaining popularity due to its easy-to-understand programming interface.
 
-Maybe this is news to you, but our MXNet is also providing a programming interface that resembles PyTorch’s through `NDArray` and `Gluon`. We’ll show compare how the two frameworks implement the same algorithm.
+Maybe this is news to you, but our MXNet is also providing a programming interface that resembles PyTorch’s through `NDArray` and `Gluon`. We’ll compare how the two frameworks implement the same algorithm.
 
 ![](img/pytorch-to-mxnet.png){:width="500px"}
 
