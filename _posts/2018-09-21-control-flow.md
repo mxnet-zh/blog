@@ -1,4 +1,9 @@
-#在 Gluon 里hybridize 动态模型
+---
+
+title: 在 Gluon 里hybridize 动态模型
+
+author: 郑达 Amazon AI Applied Scientist
+---
 
 之前我们一直跟 Gluon 用户说，如果想 hybridize Gluon 的模型，请不要在模型里使用条件判断或循环。原因是 MXNet 的计算图只支持静态的计算，而不支持各种动态的跳转。可是现在的模型变得越来越复杂，越来越动态开，很多时候，模型需要运行的计算取决于用户的输入。比较典型的例子是 NLP 模型：我们需要在序列数据上运行 RNN cell，但是这些序列数据的长度是未知的或不定长的。这个时候我们希望我们的计算图有循环跳转来处理序列数据里的每个单元。
 
@@ -39,6 +44,6 @@ outs = rnn(data, [mx.nd.normal(shape=(32, 512))])
 
 虽说我们加入这些 operator 是为了能更方便的在 Gluon 里 hybridize 模型，使用这些 operator 还是能提升计算的速度。至于能提升多少，很大程度上取决于计算本身。比如说一个循环本身不需要太多的计算（例如每次只处理一个 sample），使用 control flow operator 在 hybridize 之后就能带来不少的速度提升；反之，速度的提升就会比较小。如下图所示，当 batch size 是1的时候，control flow operator 能让 RNN inference 变快 80%。
 
-![](img/cf_speedup.png)
+![](img/cf_speedup.png){:width="700px"}
 
 现在我们的 control flow operator 还是处于实验阶段，所以它们在 contrib 里。希望大家能给我们提供更多的回馈来帮助我们提高用户的使用体验和性能。
