@@ -7,11 +7,11 @@ As deep learning models are becoming increasingly complex and dynamic these days
 
 Gluon has a hybridization mode that automatically turns Python code into a computation graph. The benefit of hybridization is to improve performance and simplify deployment of a Gluon model in multiple languages and different platforms. Please see [this tutorial](https://mxnet.incubator.apache.org/tutorials/gluon/hybrid.html) for more details of Gluon hybridization. One of the limitations in Gluon hybridization is that Gluon's computation graph previously only supported static computation. For example, when running an RNN sequence in Gluon hybrdization, the RNN has to be explicitly unrolled for a predefined length (the figure below shows an RNN computation graph for a sequence of length 3). Thus, we usually suggested not using conditional jumps or loops in Gluon if you want to use hybridization.
 
-![](img/static_RNN.png)
+![](https://raw.githubusercontent.com/zheng-da/mxnet-zh-blog/control_flow/img/static_RNN.png)
 
 Since MXNet v1.3, we introduced 3 control flow operators: cond, while_loop and foreach to enable dynamic computation in Gluon computation graph. With those operators, we can now use conditional jumps and loops in Gluon models to simplify the dynamic model deployment.
 
-![](img/control_flow.png)
+![](https://raw.githubusercontent.com/zheng-da/mxnet-zh-blog/control_flow/img/control_flow.png)
 
 The diagram above shows the functionality of the 3 operators:
 
@@ -47,12 +47,12 @@ outs = rnn(data, [mx.nd.normal(shape=(32, 512))])
 
 The computation graph after Gluon hybridization is shown as below.
 
-![](img/dynamic_RNN.png)
+![](https://raw.githubusercontent.com/zheng-da/mxnet-zh-blog/control_flow/img/dynamic_RNN.png)
 
 Obviously this example is a very simple one, for more on how to use control flow operators to implement complex computation, please refer to this detailed [tutorial](https://mxnet.incubator.apache.org/tutorials/control_flow/ControlFlowTutorial.html) which covers quite a few example use cases. For even more complex models, one can also refer to Gluon-NLP. For instance, [beam search] in Gluon-NLP was implemented using those control flow operators.
 
 Although the main reason to introduce control flow operators is to make hybridizing Gluon models more convenient, using them could also speed up computation. The actual speed gain shall depend on the model itself. If a loop does not require too much computation (for example, 1 sample at a time), it could benefit a lot from control flow operators; vice versa, the speed gain would be small. We performed a [benchmark](https://github.com/apache/incubator-mxnet/blob/master/benchmark/python/control_flow/rnn.py) to get the performance gain of the example model above on a c5.18xlarge EC2 instance. As the image below shows, when batch size is set to 1, using control flow operators could speed up RNN inference by 80%.
 
-![](img/cf_speedup.png){:width="700px"}
+![](https://raw.githubusercontent.com/zheng-da/mxnet-zh-blog/control_flow/img/cf_speedup.png){:width="700px"}
 
 Control flow operators are still experimental at this moment, so they're put under contrib package. We appreciate more feedbacks from users so that we could keep improving MXNet's user experience and performance.
