@@ -48,7 +48,7 @@ textCNN是一个浅层的词级别的模型，Le等人[4]在2017年通过实验�
 * 对于池化层，Ye Zhang等人和Le等人都认为1-max pooling基本上总是优于其他方式，如k-max pooling和avg pooling。但我在实际中感觉，当文本长度稍长，特别是句子语义在空间上差别大的时候（比如情感分类问题，前半句和后半句语义可能有较大差异），k-max pooling可能会略有效一些。但总体来说，直接用1-max pooling就得了。
 * 我在实际应用中感觉dropout和l2的作用并没有多大，可能和数据集有关。
 
-在Gluon-NLP中，也添加了这个[textCNN模型](http://gluon-nlp.mxnet.io/model_zoo/sentiment_analysis/index.html)，欢迎尝试。
+介绍完了textCNN，在Gluon-NLP中，也添加了这个[textCNN模型用于情感分析](http://gluon-nlp.mxnet.io/model_zoo/sentiment_analysis/index.html)，欢迎尝试。
 
 ### 参考文献：
 1. Kim, Y. (2014). Convolutional neural networks for sentence classification. arXiv preprint arXiv:1408.5882.
