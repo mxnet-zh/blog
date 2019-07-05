@@ -120,9 +120,9 @@ python evaluate.py --cpu --num-batch 10 --batch-size 224 --deploy --prefix=./mod
 # Download demo image
 python data/demo/download_demo_images.py
 # visualize float32 detection
-python demo.py --cpu --network vgg16_reduced --data-shape 300 --deploy --prefix=./model/ssd_
+python demo.py --cpu --network vgg16_reduced --data-shape 300 --thresh 0.4 --deploy --prefix=./model/ssd_
 # visualize int8 detection
-python demo.py --cpu --network vgg16_reduced --data-shape 300 --deploy --prefix=./model/cqssd_
+python demo.py --cpu --network vgg16_reduced --data-shape 300 --thresh 0.4 --deploy --prefix=./model/cqssd_
 ```
 
 ![](img/2019-07-02-fig4.1.jpg)
